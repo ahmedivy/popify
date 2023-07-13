@@ -1,17 +1,20 @@
-import './globals.css'
-import { Figtree } from 'next/font/google'
+import Sidebar from "@/components/Sidebar";
+import "./globals.css";
+import { Figtree } from "next/font/google";
 
-const font = Figtree({ subsets: ['latin'] })
+const font = Figtree({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Spotify',
-  description: 'Listen to music!',
-}
+  title: "Spotify",
+  description: "Listen to music!",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <Sidebar>{children}</Sidebar>
+      </body>
     </html>
-  )
+  );
 }
