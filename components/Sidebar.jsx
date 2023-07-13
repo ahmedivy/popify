@@ -1,11 +1,12 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useMemo } from "react";
 import { HiHome } from "react-icons/hi";
+import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
+import { usePathname } from "next/navigation";
 
 import Box from "./Box";
+import Library from "./Library";
 import SidebarItem from "./SidebarItem";
 
 function Sidebar({ children }) {
@@ -38,7 +39,9 @@ function Sidebar({ children }) {
             })}
           </div>
         </Box>
-        <Box className="overflow-y-auto h-full">Song Library</Box>
+        <Box className="overflow-y-auto h-full">
+          <Library />
+        </Box>
       </div>
       <main className="overflow-y-auto h-full py-2 flex-1">{children}</main>
     </div>
