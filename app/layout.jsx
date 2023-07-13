@@ -5,8 +5,8 @@ import { Figtree } from "next/font/google";
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Spotify",
-  description: "Listen to music!",
+  title: "Popify",
+  description: "Listen to best music!",
 };
 
 export default function RootLayout({ children }) {
