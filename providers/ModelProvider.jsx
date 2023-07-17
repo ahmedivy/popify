@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import AuthModel from "@/components/AuthModel";
+import UploadModel from "@/components/UploadModel";
 
 function ModelProvider() {
   const [isMounted, setIsMounted] = useState(false);
@@ -16,6 +17,7 @@ function ModelProvider() {
   return (
     <>
       <AuthModel />
+      <UploadModel />
     </>
   );
 }
