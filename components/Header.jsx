@@ -7,10 +7,13 @@ import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 
 import Button from "./Button";
+import useAuthModel from "@/hooks/useAuthModel";
 
 function Header({ className, children }) {
   const router = useRouter();
   const handleLogout = () => {};
+
+  const authModel = useAuthModel();
 
   return (
     <div
@@ -46,7 +49,7 @@ function Header({ className, children }) {
             <>
                 <div>
                     <Button
-                        onClick={() => {}}
+                        onClick={authModel.onOpen}
                         className='bg-transparent text-neutral-300 font-medium'
                     >
                         Sign up
@@ -54,7 +57,7 @@ function Header({ className, children }) {
                 </div>
                 <div>
                     <Button
-                        onClick={() => {}}
+                        onClick={authModel.onOpen}
                         className='bg-white px-6 py-2'
                     >
                         Log in
