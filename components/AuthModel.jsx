@@ -11,6 +11,7 @@ import {
 import Model from "./Model";
 import useAuthModel from "@/hooks/useAuthModel";
 import { useEffect } from "react";
+import { toast } from "react-hot-toast";
 
 function AuthModel() {
   const router = useRouter();
@@ -23,8 +24,10 @@ function AuthModel() {
     if (session) {
       router.refresh();
       onClose();
+
+      toast.success(`Welcome back, ${session.user.email}`);
     }
-  }, [session, router, onClose])
+  }, [session, router, onClose]);
 
   const onChange = (open) => {
     if (!open) {
