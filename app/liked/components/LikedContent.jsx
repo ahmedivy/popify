@@ -1,29 +1,30 @@
-'use client'
+"use client";
 
-import LikeButton from "@/components/LikeButton";
-import MediaItem from "@/components/MediaItem";
-import { useUser } from "@/hooks/useUser";
-import { useRouter } from "next/navigation"
 import { useEffect } from "react";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
+import { useUser } from "@/hooks/useUser";
+import MediaItem from "@/components/MediaItem";
+import LikeButton from "@/components/LikeButton";
 
 function LikedContent({ songs }) {
-
   const router = useRouter();
   const { isLoading, user } = useUser();
 
   useEffect(() => {
     if (!isLoading && !user) {
-        router.replace("/");
+      router.replace("/");
+      toast.error("You need to login first");
     }
-  }, [isLoading, user, router])
+  }, [isLoading, user, router]);
 
   if (songs.length === 0) {
     return (
-        <div className="flex flex-col gap-y-2 w-full px-6 text-neutral-400">
-            Like some songs to see them here!
-        </div>
-    )
+      <div className="flex flex-col gap-y-2 w-full px-6 text-neutral-400">
+        Like some songs to see them here!
+      </div>
+    );
   }
 
   return (
@@ -31,13 +32,13 @@ function LikedContent({ songs }) {
       {songs.map((song) => (
         <div key={song.id} className="flex items-center gap-x-4 w-full">
           <div className="flex-1">
-            <MediaItem data={song} onClick={() => {}}/>
+            <MediaItem data={song} onClick={() => {}} />
           </div>
           <LikeButton songId={song.id} />
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default LikedContent
+export default LikedContent;
