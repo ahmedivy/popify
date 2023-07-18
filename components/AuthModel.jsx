@@ -24,10 +24,9 @@ function AuthModel() {
     if (session) {
       router.refresh();
       onClose();
-
-      toast.success(`Welcome back, ${session.user.email}`);
     }
   }, [session, router, onClose]);
+
 
   const onChange = (open) => {
     if (!open) {
