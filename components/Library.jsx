@@ -7,8 +7,9 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { useUser } from "@/hooks/useUser";
 import useAuthModel from "@/hooks/useAuthModel";
 import useUploadModel from "@/hooks/useUploadModel";
+import MediaItem from "./MediaItem";
 
-function Library() {
+function Library({ songs }) {
   const authModel = useAuthModel();
   const uploadModel = useUploadModel();
 
@@ -37,7 +38,11 @@ function Library() {
           onClick={onClick}
         />
       </div>
-      <div className="flex flex-col gap-y-2 mt-4 px-3">List of Songs!</div>
+      <div className="flex flex-col gap-y-2 mt-4 px-3">
+        {songs.map((song) => (
+          <MediaItem key={song.id} data={song} onClick={() => {}}/>
+        ))}
+      </div>
     </div>
   );
 }

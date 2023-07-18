@@ -9,7 +9,7 @@ import Box from "./Box";
 import Library from "./Library";
 import SidebarItem from "./SidebarItem";
 
-function Sidebar({ children }) {
+function Sidebar({ songs, children }) {
   const pathName = usePathname();
   const routes = useMemo(
     () => [
@@ -40,7 +40,7 @@ function Sidebar({ children }) {
           </div>
         </Box>
         <Box className="overflow-y-auto h-full">
-          <Library />
+          <Library songs={songs}/>
         </Box>
       </div>
       <main className="overflow-y-auto h-full py-2 flex-1">{children}</main>
