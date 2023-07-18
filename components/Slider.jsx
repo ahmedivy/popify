@@ -10,7 +10,7 @@ function Slider({ value, onChange }) {
     <RadixSlider.Root
       className="relative flex items-center select-none touch-none w-full h-10"
       defaultValue={[1]}
-      value={value}
+      value={[value]}
       max={1}
       onValueChange={handleChange}
       step={0.1}
