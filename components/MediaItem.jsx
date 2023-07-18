@@ -23,7 +23,7 @@ function MediaItem({ data, onClick }) {
     >
       <div className="relative rounded-md min-h-[48px] min-w-[48px] overflow-hidden">
         <Image
-          src={imageUrl || "/images/liked.png"}
+          src={imageUrl || "/images/placeholder.png"}
           fill
           alt="media item image"
           className="object-cover"

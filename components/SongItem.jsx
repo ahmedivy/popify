@@ -19,7 +19,7 @@ function SongItem({ data, onClick }) {
     >
       <div className="relative aspect-square w-full h-full rounded-md overflow-hidden">
         <Image
-          src={imagePath || "/images/liked.png"}
+          src={imagePath || "/images/placeholder.png"}
           fill
           className="object-cover"
           alt={data.title}
