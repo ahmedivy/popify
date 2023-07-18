@@ -69,6 +69,7 @@ function LikeButton({ songId }) {
         toast.success("Liked");
       }
     }
+    router.refresh();
   };
 
   return (
