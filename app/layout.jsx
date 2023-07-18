@@ -6,7 +6,8 @@ import Sidebar from "@/components/Sidebar";
 import UserProvider from "@/providers/UserProvider";
 import ModelProvider from "@/providers/ModelProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
-import getSongsByID from "@/actions/getSongsById";
+import getSongsByUserId from "@/actions/getSongsByUserId";
+import Player from "@/components/Player";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export const revalidate = 0;
 
 export default async function RootLayout({ children }) {
 
-  const songs = await getSongsByID();
+  const songs = await getSongsByUserId();
 
   return (
     <html lang="en">
@@ -29,6 +30,7 @@ export default async function RootLayout({ children }) {
           <UserProvider>
             <ModelProvider />
             <Sidebar songs={songs}>{children}</Sidebar> 
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>

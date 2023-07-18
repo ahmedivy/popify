@@ -56,10 +56,16 @@ function Header({ className, children }) {
           </button>
         </div>
         <div className="flex md:hidden items-center gap-x-2">
-          <button className="rounded-full p-2 flex item-center hover:opacity-75 bg-white">
+          <button 
+            className="rounded-full p-2 flex item-center hover:opacity-75 bg-white"
+            onClick={() => router.push("/")}
+          >
             <HiHome size={20} className="text-black" />
           </button>
-          <button className="rounded-full p-2 flex item-center hover:opacity-75 bg-white">
+          <button 
+            className="rounded-full p-2 flex item-center hover:opacity-75 bg-white"
+            onClick={() => router.push("/search")}
+          >
             <BiSearch size={20} className="text-black" />
           </button>
         </div>
